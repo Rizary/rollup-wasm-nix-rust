@@ -1,4 +1,4 @@
-# Build WASM project with Rollup and Nix in Rust
+# Build Rust WebAssembly project with Rollup using Nix
 
 ## Setup
 
