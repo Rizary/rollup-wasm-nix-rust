@@ -1,2 +1,2 @@
 { system ? builtins.currentSystem }:
-(import ./. { inherit system; }).shell
+(import ./. { inherit system; }).shellNix
