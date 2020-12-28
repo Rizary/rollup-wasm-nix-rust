@@ -5,12 +5,13 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "build": "rollup -c rollup.prod.js",
-        "start": "run-p todo_backend todo_watch",
-        "todo_backend": "cd ../. ./backend/rust && cargo run",
-        "todo_watch": "yarn run todo_clean && yarn run todo_frontend ",
-        "todo_clean": "rimraf ./devhtml/js",
-        "todo_frontend": "rollup -c rollup.dev.js --watch"
+        "watch": "run-p watch:tailwind watch:rollup",
+        "build": "run-p build:tailwind build:rollup",
+        "watch:tailwind": "postcss src-css/tailwind.css -o devhtml/css/main.css -w",
+        "build:tailwind": "NODE_ENV=production postcss src-css/tailwind.css -o dist/css/main.css",
+        "watch:rollup": "rollup -c rollup.dev.js --watch",
+        "build:rollup": "rollup -c rollup.prod.js",
+        "clean": "rimraf ./devhtml/js && rimraf ./devhtml/css"
     },
     "dependencies": {
     },
@@ -22,6 +23,24 @@
         "rollup": "^2.29.0",
         "rollup-plugin-livereload": "^2.0.0",
         "rollup-plugin-serve": "^1.0.4",
-        "rollup-watch": "^4.3.1"
+        "rollup-watch": "^4.3.1",
+        "autoprefixer": "^9.7.6",
+        "postcss-cli": "^7.1.0",
+        "tailwindcss": "^1.4.0",
+        "tailwindcss-font-inter": "^1.0.8",
+        "tailwindcss-rtl": "^0.4.0",
+        "@fullhuman/postcss-purgecss": "^2.1.2",
+        "@tailwindcss/typography": "^0.2.0",
+        "cssnano": "^4.1.10",
+        "lost": "^8.3.1",
+        "postcss": "^7.0.32",
+        "postcss-animation.css-data": "^1.1.0",
+        "postcss-animations": "^7.0.1",
+        "postcss-clean": "^1.1.0",
+        "postcss-import": "^12.0.1",
+        "postcss-magic.css-data": "^1.1.0",
+        "postcss-mimic.css-data": "^1.0.2",
+        "postcss-nested": "^4.2.1",
+        "postcss-tuesday.css-data": "^1.0.2"
     }
 }

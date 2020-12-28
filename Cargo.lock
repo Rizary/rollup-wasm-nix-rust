@@ -19,14 +19,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
-name = "common"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "console_error_panic_hook"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -271,7 +263,6 @@ name = "rust-frontend"
 version = "0.1.0"
 dependencies = [
  "cfg-if 1.0.0",
- "common",
  "console_error_panic_hook",
  "dominator",
  "futures",

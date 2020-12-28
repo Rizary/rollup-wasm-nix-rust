@@ -1,4 +1,6 @@
 devhtml/js
-result/
-result-*/
-node-modules/
+result
+result-*
+node_modules
+target
+dist

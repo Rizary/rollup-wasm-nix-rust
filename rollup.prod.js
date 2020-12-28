@@ -5,15 +5,15 @@ export default {
         index: "./Cargo.toml",
     },
     output: {
-        dir: "dist",
+        dir: "dist/js",
         format: "iife",
         sourcemap: true,
         chunkFileNames: "[name]-[hash].js",
-        assetFileNames: "assets/[name]-[extname]",
+        assetFileNames: "assets/[name]-[hash][extname]",
     },
     plugins: [
         rust({
-            serverPath: "/dist/",
+            serverPath: "/js/",
             debug: false,
             verbose: true
         }),

@@ -27,13 +27,17 @@ export default {
             open: true,
             verbose: true,
             debug: false,
+            port: 8189,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Content-Type": "application/wasm",
+            },
             // historyApiFallback: true,
         }),
 
         livereload({
             watch: 'devhtml/js',
             verbose: true
-
         })
     ],
     watch: {

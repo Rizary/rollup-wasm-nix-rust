@@ -376,7 +376,7 @@ impl App {
             .children(&mut [
                 html!("h1", {
                     .class(["h1","m-6","p-6","text-bold","text-center","my-lg-2","width-full"])
-                    .text("TodoMVC - Rust")
+                    .text("Hi")
                 }),
 
                 html!("input", {
