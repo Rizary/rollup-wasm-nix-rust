@@ -6,9 +6,9 @@ use dominator::routing;
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Route {
     // NotFound,
-    Active,
-    Completed,
-    All,
+    About,
+    Contact,
+    Home,
 }
 
 impl Route {
@@ -17,18 +17,18 @@ impl Route {
             .signal_ref(|url| Url::new(&url).unwrap_throw())
             .map(|url| {
                 match url.hash().as_str() {
-                    "#/active" => Route::Active,
-                    "#/completed" => Route::Completed,
-                    _ => Route::All,
+                    "#/about" => Route::About,
+                    "#/contact" => Route::Contact,
+                    _ => Route::Home,
                 }
             })
     }
 
     pub fn url(&self) -> &'static str {
         match self {
-            Route::Active => "#/active",
-            Route::Completed => "#/completed",
-            Route::All => "/",
+            Route::About => "#/about",
+            Route::Contact => "#/contact",
+            Route::Home => "/",
         }
     }
 }
